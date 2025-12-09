@@ -1,0 +1,201 @@
+
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <title>Farm Status</title>
+                <meta http-equiv="refresh" content="10">
+                <style>
+                    body { font-family: 'Segoe UI', sans-serif; background: #1e1e1e; color: #ccc; padding: 20px; }
+                    
+                    /* Header & Button */
+                    .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #444; padding-bottom: 15px; margin-bottom: 20px; }
+                    h1 { margin: 0; color: #eee; font-size: 20px; }
+                    .btn-refresh { background-color: #007acc; color: white; border: none; padding: 10px 20px; font-size: 14px; border-radius: 4px; cursor: pointer; font-weight: bold; }
+                    .btn-refresh:hover { background-color: #005f9e; }
+                    
+                    /* Tables */
+                    h2 { color: #eee; font-size: 16px; margin-top: 30px; border-left: 4px solid #555; padding-left: 10px; }
+                    table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; background: #252526; }
+                    th { text-align: left; background: #333; color: #aaa; padding: 10px; }
+                    td { border-bottom: 1px solid #444; padding: 10px; vertical-align: middle; }
+                    
+                    /* Status Colors */
+                    .st-Rendering, .st-Active { color: #8bc34a; font-weight: bold; }
+                    .st-Queued { color: #d69d36; }
+                    .st-Completed { color: #666; text-decoration: line-through; }
+                    .st-Failed { color: #f44336; }
+                    
+                    /* Progress Bar */
+                    .p-container { background: #444; width: 80px; height: 6px; border-radius: 4px; overflow: hidden; display: inline-block; margin-right: 10px; vertical-align: middle; }
+                    .p-fill { height: 100%; background: #007acc; }
+                    .st-Rendering .p-fill, .st-Active .p-fill { background: #8bc34a; }
+                    .st-Queued .p-fill { background: #d69d36; }
+                    
+                    .empty { padding: 20px; text-align: center; color: #555; font-style: italic; }
+                    .section-icon { margin-right: 8px; font-size: 1.2em; }
+                    
+                    /* Highlight My Rows */
+                    .mine { background: #2d353b; }
+                    .mine td { color: #fff; }
+                </style>
+            </head>
+            <body>
+                <div class="header">
+                    <h1>Deadline Monitor (Queue + ETA)</h1>
+                    <div>
+                        <span style="font-size:12px; color:#666; margin-right:15px">Updated: 09:50:17</span>
+                        <button class="btn-refresh" onclick="window.location.reload();">REFRESH</button>
+                    </div>
+                </div>
+
+                <!-- GLOBAL ACTIVE -->
+                <h2><span class="section-icon">&#128293;</span> Active Queue & Renders</h2>
+                <table>
+                    <thead><tr><th>User</th><th>Job Name</th><th>Status</th><th>Progress</th><th>ETA</th></tr></thead>
+                    <tbody>
+            
+                <tr class=''>
+                    <td style="font-weight:bold;">mike.diltz</td>
+                    <td>THP_203_005_010_comp_v004_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:0%'></div></div>0%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">juanjose.sanchez</td>
+                    <td>THP_204_033_030_versionZero_v000_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:0%'></div></div>0%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">james.elster</td>
+                    <td>SNW_409_909_020_cmp_b005_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:0%'></div></div>0%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">juanjose.sanchez</td>
+                    <td>THP_204_033_020_versionZero_v000_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:23%'></div></div>23%</td>
+                    <td>?</td>
+                </tr>
+                <tr class='mine'>
+                    <td style="font-weight:bold;">manuel.llamas</td>
+                    <td>THP_201_045_010_comp_v011_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:76%'></div></div>76%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">miguel.soriano</td>
+                    <td>mrkt1080_comp_v020_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:94%'></div></div>94%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">julio.garcia</td>
+                    <td>KCYT_201_001_020_LGT_ShotLighting_scene_v017 - /obj/ropnet_201/deadline1</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:0%'></div></div>0%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">oyinlola.akinwusi</td>
+                    <td>THP_202_058_010_comp_v006_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">larry.ngo</td>
+                    <td>THP_201_051_020_comp_v009_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:92%'></div></div>92%</td>
+                    <td>?</td>
+                </tr>
+                <tr class='mine'>
+                    <td style="font-weight:bold;">manuel.llamas</td>
+                    <td>THP_202_025_010_comp_v006_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>?</td>
+                </tr>
+                <tr class=''>
+                    <td style="font-weight:bold;">tiago.aguilar</td>
+                    <td>THP_201_056_010_comp_v009_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>?</td>
+                </tr>
+                <tr class='mine'>
+                    <td style="font-weight:bold;">manuel.llamas</td>
+                    <td>EA1000_comp_v0028_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:97%'></div></div>97%</td>
+                    <td>?</td>
+                </tr>
+                    </tbody>
+                </table>
+
+                <h2><span class="section-icon">&#128100;</span> My History (Today)</h2>
+                <table>
+                    <thead><tr><th>Job Name</th><th>Status</th><th>Progress</th><th>Time</th></tr></thead>
+                    <tbody>
+            
+                <tr>
+                    <td>THP_201_045_010_comp_v011_renderfarm</td>
+                    <td class="st-Rendering">Active</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:76%'></div></div>76%</td>
+                    <td>09:44</td>
+                </tr>
+                <tr>
+                    <td>THP_202_025_010_comp_v006_extra</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:41</td>
+                </tr>
+                <tr>
+                    <td>THP_202_025_010_comp_v006_Internal</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:41</td>
+                </tr>
+                <tr>
+                    <td>THP_202_025_010_comp_v006_Delivery</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:41</td>
+                </tr>
+                <tr>
+                    <td>THP_201_045_010_comp_v011_renderfarm</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:26</td>
+                </tr>
+                <tr>
+                    <td>THP_201_045_010_comp_v011_renderfarm</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:22</td>
+                </tr>
+                <tr>
+                    <td>THP_202_025_010_comp_v006_renderfarm</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:15</td>
+                </tr>
+                <tr>
+                    <td>THP_202_025_010_comp_v006_renderfarm</td>
+                    <td class="st-Completed">Completed</td>
+                    <td><div class='p-container'><div class='p-fill' style='width:100%'></div></div>100%</td>
+                    <td>09:08</td>
+                </tr>
+                    </tbody>
+                </table>
+            </body>
+            </html>
+            
